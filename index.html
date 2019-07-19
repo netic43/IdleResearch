@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="researchers.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div id="basic">
+            Knowledge: <span id="knowledge">0</span><br>
+            <button onclick="study()">Study</button><br>
+            <span id="totalRate">0 knowledge per second</span>
+        </div>
+        <div id="researchers">
+            <h3><strong>Researchers</strong></h3>
+            <h4 id="no-ed">Uneducated</h4>
+            <div id="low-skill">
+                <span><strong>Intern</strong></span><br><button onclick="purchase(0)">Hire</button><br>
+                <span>Amount:</span> <span id="resNum0">0</span><br>
+                <span>Rate:</span> <span id="resRate0">1</span><br>
+                <span>Cost:</span> <span id="resCost0">10</span><br>
+                <span><strong>High-school graduate</strong></span><br><button onclick="purchase(1)">Hire</button><br>
+                <span>Amount:</span> <span id="resNum1">0</span><br>
+                <span>Rate:</span> <span id="resRate1">5</span><br>
+                <span>Cost:</span> <span id="resCost1">50</span><br>
+                <span><strong>College graduate</strong></span><br><button onclick="purchase(2)">Hire</button><br>
+                <span>Amount:</span> <span id="resNum2">0</span><br>
+                <span>Rate:</span> <span id="resRate2">10</span><br>
+                <span>Cost:</span> <span id="resCost2">500</span>
+            </div>
+            <h4 id="basic-ed">Basic education</h4>
+            <div id="med-skill">
+                <span><strong>Jr. Research Assistant</strong></span><br><button onclick="purchase(3)">Hire</button><br>
+                <span>Amount:</span> <span id="resNum3">0</span><br>
+                <span>Rate:</span> <span id="resRate3">30</span><br>
+                <span>Cost:</span> <span id="resCost3">1000</span><br>
+                <span><strong>Research Assistant</strong></span><br><button onclick="purchase(4)">Hire</button><br>
+                <span>Amount:</span> <span id="resNum4">0</span><br>
+                <span>Rate:</span> <span id="resRate4">70</span><br>
+                <span>Cost:</span> <span id="resCost4">5000</span><br>
+                <span><strong>Sr. Research Assistant</strong></span><br><button onclick="purchase(5)">Hire</button><br>
+                <span>Amount:</span> <span id="resNum5">0</span><br>
+                <span>Rate:</span> <span id="resRate5">150</span><br>
+                <span>Cost:</span> <span id="resCost5">10000</span><br>
+            </div>
+        </div>
+    </body>
+</html>

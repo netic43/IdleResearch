@@ -1,0 +1,51 @@
+#basic {
+    text-align: center;
+}
+
+#researchers {
+    text-align: center;
+    align-content: center;
+}
+
+#no-ed {
+    margin-bottom: 1px;
+    text-align: center;
+    width: 153px;
+
+    border: groove;
+    border-color: brown;
+    border-width: 2px;
+}
+
+#low-skill {
+    display: block;
+    width: fit-content;
+    border-style: solid;
+    padding: 2px;
+}
+
+#basic-ed {
+    position: absolute;
+    left: 210px;
+    top: 88px;
+    width: 158px;
+
+    border: groove;
+    border-color: orange;
+    border-width: 2px;
+}
+
+#med-skill {
+    display: block;
+    position: absolute;
+    left: 210px;
+    top: 133px;
+    width: fit-content;
+    border-style: solid;
+    padding: 2px;
+}
+
+h3 {
+    margin: 2px;
+    text-align: center;
+}
