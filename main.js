@@ -5,7 +5,6 @@ var player = {
 
 function study() {
     player.knowledge++;
-    $("#knowledge").html(player.knowledge);
 }
 
 function purchase(id) {
