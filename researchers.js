@@ -34,5 +34,23 @@ var workers = [
         num: 0,
         cost: 10000,
         rate: 150
+    },
+    research_associate = {
+        id: 6,
+        num: 0,
+        cost: 15000,
+        rate: 320
+    },
+    sr_research_associate = {
+        id: 7,
+        num: 0,
+        cost: 40000,
+        rate: 600
+    },
+    principal_research_associate = {
+        id: 8,
+        num: 0,
+        cost: 100000,
+        rate: 1000
     }
 ];

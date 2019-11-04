@@ -1,6 +1,8 @@
 var player = {
     knowledge: 0,
-    totalRate: 0
+    totalRate: 0,
+    cash: 0,
+    gainMult: 0.1
 }
 
 function study() {
@@ -10,16 +12,23 @@ function study() {
 function purchase(id) {
     for(res of workers) {
         if(res.id == id)
-            if(player.knowledge >= res.cost) {
-                player.knowledge-=res.cost;
+            if(player.cash >= res.cost) {
+                player.cash-=res.cost;
                 res.num++;
                 res.cost = Math.ceil(res.cost * 1.75);
                 player.totalRate += res.rate;
                 updateRes(res);
-                $("#knowledge").html(Math.floor(player.knowledge));
+                $("#cash").html(Math.floor(player.cash));
                 $("#totalRate").html(player.totalRate + " knowledge per second");
             }
     }
+}
+
+function sellKnowledge() {
+    player.cash += Math.floor(player.knowledge*player.gainMult);
+    player.knowledge = 0;
+    $("#knowledge").html(Math.floor(player.knowledge));
+    $('#cash').html(Math.floor(player.cash));
 }
 
 function updateRes(obj) {
@@ -30,12 +39,15 @@ function updateRes(obj) {
 function autoKnowledge() {
     player.knowledge += (player.totalRate/10);
     $("#knowledge").html(Math.floor(player.knowledge));
+    $('#cashGain').html(Math.floor(player.knowledge*player.gainMult));
 }
 
 function saveTheGame() {
     var save = {
         knowledge: player.knowledge,
         totalRate: player.totalRate,
+        cash: player.cash,
+        gainMult: player.gainMult,
         workers: workers
     }
     localStorage.setItem("save", JSON.stringify(save));
@@ -47,6 +59,8 @@ function load() {
 
     if(typeof savegame !== "undefined") player.knowledge = savegame.knowledge;
     if(typeof savegame !== "undefined") player.totalRate = savegame.totalRate;
+    if(typeof savegame !== "undefined") player.cash = savegame.cash;
+    if(typeof savegame !== "undefined") gainMult = savegame.gainMult;
     if(typeof savegame !== "undefined") workers = savegame.workers;
 
     for(res of workers) { 
@@ -60,6 +74,6 @@ $(function() {
         //console.log("there is a savegame")
         load();
     }
-
+    $('#gainMult').html(player.gainMult);
     setInterval(autoKnowledge,100);
 });

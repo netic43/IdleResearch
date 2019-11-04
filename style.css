@@ -1,17 +1,20 @@
 #basic {
+    width: 501px;
     text-align: center;
 }
 
 #researchers {
     text-align: center;
     align-content: center;
+    display: flex;
+    width: 50%;
 }
 
 #no-ed {
     margin-bottom: 1px;
     text-align: center;
-    width: 153px;
-
+    width: auto;
+    margin: 0 auto;
     border: groove;
     border-color: brown;
     border-width: 2px;
@@ -22,22 +25,21 @@
     width: fit-content;
     border-style: solid;
     padding: 2px;
+
+    margin: 0;
 }
 
 #basic-ed {
-    position: absolute;
-    left: 210px;
-    top: 88px;
-    width: 158px;
-
+    margin: 0 auto;
+    width: auto;
     border: groove;
     border-color: orange;
     border-width: 2px;
 }
 
 #med-skill {
+    margin: 0;
     display: block;
-    position: absolute;
     left: 210px;
     top: 133px;
     width: fit-content;
@@ -45,7 +47,25 @@
     padding: 2px;
 }
 
+#high-ed {
+    margin: 0 auto;
+    width: auto;
+    border: groove;
+    border-color: rgb(168, 21, 41);
+    border-width: 2px;
+}
+
+#high-skill {
+    margin: 0;
+    display: block;
+    left: 510px;
+    top: 133px;
+    width: fit-content;
+    border-style: solid;
+    padding: 2px;
+}
+
 h3 {
-    margin: 2px;
+    width: 501px;
     text-align: center;
 }

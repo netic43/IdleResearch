@@ -10,42 +10,59 @@
     <body>
         <button onclick="saveTheGame()">Save</button>
         <div id="basic">
-            Knowledge: <span id="knowledge">0</span><br>
+            Knowledge: <span id="knowledge">0</span> <p style="margin: 0">Cash: <span id="cash">0</span></p><br>
             <button onclick="study()">Study</button><br>
             <span id="totalRate">0 knowledge per second</span>
         </div>
+        <h3><strong>Researchers</strong></h3>
         <div id="researchers">
-            <h3><strong>Researchers</strong></h3>
-            <h4 id="no-ed">Uneducated</h4>
             <div id="low-skill">
+                <h4 id="no-ed">Uneducated</h4>
                 <span><strong>Intern</strong></span><br><button onclick="purchase(0)">Hire</button><br>
                 <span>Amount:</span> <span id="resNum0">0</span><br>
-                <span>Rate:</span> <span id="resRate0">1</span><br>
-                <span>Cost:</span> <span id="resCost0">10</span><br>
+                <span>Knowledge Rate:</span> <span id="resRate0">1</span><br>
+                <span>$</span><span id="resCost0">10</span><br>
                 <span><strong>High-school graduate</strong></span><br><button onclick="purchase(1)">Hire</button><br>
                 <span>Amount:</span> <span id="resNum1">0</span><br>
-                <span>Rate:</span> <span id="resRate1">5</span><br>
-                <span>Cost:</span> <span id="resCost1">50</span><br>
+                <span>Knowledge Rate:</span> <span id="resRate1">5</span><br>
+                <span>$</span><span id="resCost1">50</span><br>
                 <span><strong>College graduate</strong></span><br><button onclick="purchase(2)">Hire</button><br>
                 <span>Amount:</span> <span id="resNum2">0</span><br>
-                <span>Rate:</span> <span id="resRate2">10</span><br>
-                <span>Cost:</span> <span id="resCost2">500</span>
+                <span>Knowledge Rate:</span> <span id="resRate2">10</span><br>
+                <span>$</span><span id="resCost2">500</span>
             </div>
-            <h4 id="basic-ed">Basic education</h4>
             <div id="med-skill">
+                <h4 id="basic-ed">Basic education</h4>
                 <span><strong>Jr. Research Assistant</strong></span><br><button onclick="purchase(3)">Hire</button><br>
                 <span>Amount:</span> <span id="resNum3">0</span><br>
-                <span>Rate:</span> <span id="resRate3">30</span><br>
-                <span>Cost:</span> <span id="resCost3">1000</span><br>
+                <span>Knowledge Rate:</span> <span id="resRate3">30</span><br>
+                <span>$</span><span id="resCost3">1000</span><br>
                 <span><strong>Research Assistant</strong></span><br><button onclick="purchase(4)">Hire</button><br>
                 <span>Amount:</span> <span id="resNum4">0</span><br>
-                <span>Rate:</span> <span id="resRate4">70</span><br>
-                <span>Cost:</span> <span id="resCost4">5000</span><br>
+                <span>Knowledge Rate:</span> <span id="resRate4">70</span><br>
+                <span>$</span><span id="resCost4">5000</span><br>
                 <span><strong>Sr. Research Assistant</strong></span><br><button onclick="purchase(5)">Hire</button><br>
                 <span>Amount:</span> <span id="resNum5">0</span><br>
-                <span>Rate:</span> <span id="resRate5">150</span><br>
-                <span>Cost:</span> <span id="resCost5">10000</span><br>
+                <span>Knowledge Rate:</span> <span id="resRate5">150</span><br>
+                <span>$</span><span id="resCost5">10000</span><br>
             </div>
-        </div>
+            
+            <div id="high-skill">
+                <h4 id="high-ed">High education</h4>
+                <span><strong>Research Associate</strong></span><br><button onclick="purchase(6)">Hire</button><br>
+                <span>Amount:</span> <span id="resNum6">0</span><br>
+                <span>Knowledge Rate:</span> <span id="resRate6">320</span><br>
+                <span>$</span><span id="resCost6">15000</span><br>
+                <span><strong>Sr. Research Associate</strong></span><br><button onclick="purchase(7)">Hire</button><br>
+                <span>Amount:</span> <span id="resNum7">0</span><br>
+                <span>Knowledge Rate:</span> <span id="resRate7">600</span><br>
+                <span>$</span><span id="resCost7">40000</span><br>
+                <span><strong>Principal Research Associate</strong></span><br><button onclick="purchase(8)">Hire</button><br>
+                <span>Amount:</span> <span id="resNum8">0</span><br>
+                <span>Knowledge Rate:</span> <span id="resRate8">1000</span><br>
+                <span>$</span><span id="resCost8">100000</span><br>
+            </div>
+        </div><br>
+        Sell knowledge for <span>$</span><span id="cashGain">0</span>. (<span id="gainMult"></span>x) <button onclick="sellKnowledge()">Sell</button>
     </body>
 </html>
