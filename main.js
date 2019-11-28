@@ -2,7 +2,8 @@ var player = {
     knowledge: 0,
     totalRate: 0,
     cash: 0,
-    gainMult: 0.1
+    gainMult: 0.1,
+    prestigeCost: 2
 }
 
 function study() {
@@ -42,12 +43,38 @@ function autoKnowledge() {
     $('#cashGain').html(Math.floor(player.knowledge*player.gainMult));
 }
 
+function prestige() {
+    if(workers[8].num >= player.prestigeCost) {
+        for(res of workers) {
+            for(base of baseWorkers) {
+                if(res.id == base.id) {
+                    res.num = base.num;
+                    res.cost = base.cost;
+                }
+            }
+        }
+        player.knowledge = 0;
+        player.totalRate = 0;
+        player.cash = 0;
+        player.gainMult*=2;
+        player.prestigeCost = Math.ceil(player.prestigeCost*2.5);
+        $("#knowledge").html(Math.floor(player.knowledge));
+        $("#totalRate").html(player.totalRate);
+        $("#cash").html(Math.floor(player.cash));
+        $("#gainMult").html(player.gainMult);
+        $('#prestigeCost').html(player.prestigeCost);
+    } else {
+        console.log("Not enough PRAs!");
+    }
+}
+
 function saveTheGame() {
     var save = {
         knowledge: player.knowledge,
         totalRate: player.totalRate,
         cash: player.cash,
         gainMult: player.gainMult,
+        prestigeCost: player.prestigeCost,
         workers: workers
     }
     localStorage.setItem("save", JSON.stringify(save));
@@ -60,12 +87,15 @@ function load() {
     if(typeof savegame !== "undefined") player.knowledge = savegame.knowledge;
     if(typeof savegame !== "undefined") player.totalRate = savegame.totalRate;
     if(typeof savegame !== "undefined") player.cash = savegame.cash;
-    if(typeof savegame !== "undefined") gainMult = savegame.gainMult;
+    if(typeof savegame !== "undefined") player.gainMult = savegame.gainMult;
+    if(typeof savegame !== "undefined") player.prestigeCost = savegame.prestigeCost;
     if(typeof savegame !== "undefined") workers = savegame.workers;
 
     for(res of workers) { 
         updateRes(res);
     }
+    $("#cash").html(player.cash);
+    $('#prestigeCost').html(player.prestigeCost);
     $("#totalRate").html(player.totalRate + " knowledge per second");
 }
 
