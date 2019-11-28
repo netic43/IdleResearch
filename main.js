@@ -109,4 +109,5 @@ $(function() {
     $('#prestigeCost').html(player.prestigeCost);
     $('#gainMult').html(player.gainMult);
     setInterval(autoKnowledge,100);
+    setInterval(saveTheGame, 5000);
 });
