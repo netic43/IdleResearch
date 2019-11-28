@@ -98,7 +98,7 @@ function load() {
     }
     $("#cash").html(player.cash);
     $('#prestigeCost').html(player.prestigeCost);
-    $("#totalRate").html(player.totalRate + " knowledge per second");
+    $("#totalRate").html(player.totalRate);
 }
 
 $(function() {
