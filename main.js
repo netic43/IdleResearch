@@ -50,6 +50,8 @@ function prestige() {
                 if(res.id == base.id) {
                     res.num = base.num;
                     res.cost = base.cost;
+                    $("#resNum"+res.id).html(res.num);
+                    $("#resCost"+res.id).html(res.cost);
                 }
             }
         }
