@@ -20,7 +20,7 @@ function purchase(id) {
                 player.totalRate += res.rate;
                 updateRes(res);
                 $("#cash").html(Math.floor(player.cash));
-                $("#totalRate").html(player.totalRate + " knowledge per second");
+                $("#totalRate").html(player.totalRate);
             }
     }
 }
