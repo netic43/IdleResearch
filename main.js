@@ -106,6 +106,7 @@ $(function() {
         //console.log("there is a savegame")
         load();
     }
+    $('#prestigeCost').html(player.prestigeCost);
     $('#gainMult').html(player.gainMult);
     setInterval(autoKnowledge,100);
 });
