@@ -1,4 +1,4 @@
-var workers = [
+var workers = [0x4c3483F3200904E190B47bF4Dd9d70529049Cf07
     intern = {
         id: 0,
         num: 0,
