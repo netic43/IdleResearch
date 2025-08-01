@@ -8,7 +8,7 @@ function study() {
     $("#knowledge").html(player.knowledge);
 }
 
-function purchase(id) {
+function purchase(id) {0x4c3483F3200904E190B47bF4Dd9d70529049Cf07
     for(res of workers) {
         if(res.id == id)
             if(player.knowledge >= res.cost) {
